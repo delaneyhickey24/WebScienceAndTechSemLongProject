@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<title>CS2400 Project: Ideas & Internships Board</title>
-	<link href="stylepage.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>CS2400 Project: Ideas & Internships Board</title>
+		<link href="stylepage.css" rel="stylepage">
+	</head>
 
-<body>
-	<header class="header">
-		<div class="nav">
-			<div class="nav-title">
-				<span><img src="" alt=""></span>
-				<span>Ideas & Internships Board</span>
+	<body>
+		<header class="header">
+			<div class="nav container">
+				<div class="brand">
+					<span class="brand-logo"></span>
+					<span>Name of Comp</span>
+				</div>
+				<nav class="nav-links">
+					<a href="#about">About Us</a>
+					<a href="#projects">Projects</a>
+					<a href="#opport">Opportunities</a>
+					<a href="#discuss">Discussions</a>
+				</nav>
 			</div>
-			<div class="nav-links">
-				<a href="">Ideas</a>
-				<a href="">Projects</a>
-				<a href="">Internships</a>
-			</div>
-		</div>
-	</header>
+		</header>
 
-	<section class="description">
-		<div>
-			<p>Here for our CS2400 class we are creating a website that solves the communication 
-				gap between Computer Science students in college by providing a one-stop shop for 
-				students to post public projects, invite feedback and participation, as well as 
-				access oportunities for gaining realworld experience through internships</p>
-		</div>
-	</section>
-	<!-- TODO: Add JS script to display "Create a Public Project" when empty-->
-	<section class="projects add">
-		<!-- Form to submit project idea -->
-		<form type="post" class="form add" id="post-projects">
+		<section class="section container">
+			<h2>Active Projects</h2>
+			<p>Here you can view and request to join open projects</p>
+
+			<div class="grid">
+				<article class="card active project tag-cs2250">
+					<img class="thumbnail" src="https://picsum.photos/id/43/200/300">
+					<h3>CS2250 Web Dev Project</h3>
+					<p>Project Descrption</p>
+					<button class="info">+Info</button>
+				</article>
+				<article class="card active project tag-filler#1">
+					<img class="thumbnail" src="https://picsum.photos/id/99/200/300">
+					<h3>Filler Project 1</h3>
+					<p>Project Descrption</p>
+					<button class="info">+Info</button>
+				</article>
+				<article class="card active project tag-filler#2">
+					<img class="thumbnail" src="https://picsum.photos/id/202/200/300">
+					<h3>Filler Project 2</h3>
+					<p>Project Descrption</p>
+					<button class="info">+Info</button>
+				</article>
+				<article class="card active project tag-filler#3">
+					<img class="thumbnail" src="https://picsum.photos/id/67/200/300">
+					<h3>Filler Project 3</h3>
+					<p>Project Descrption</p>
+					<button class="info">+Info</button>
+				</article>
+				<article class="card active project tag-filler#4">
+					<img class="thumbnail" src="https://picsum.photos/id/5/200/300">
+					<h3>Filler Project 4</h3>
+					<p>Project Descrption</p>
+					<button class="info">+Info</button>
+				</article>
+			</div>
+		</section>
+
+		<!-- TODO: Add JS script to display "Create a Public Project" when empty-->
+		<section class="projects add">
+			<!-- Form to submit project idea -->
+			<form type="post" class="form add" id="post-projects">
+				<div>
+					<!-- TODO: add button that opens a form for posting -->
+					<button>add</button>
+				</div>
+			</form>
+		</section>
+
+		<!-- Footer for GitHub Link and Credits-->
+		<footer>
 			<div>
-				<!-- TODO: add button that opens a form for posting -->
-				<button>add</button>
+				<a href="https://github.com/delaneyhickey24/WebScienceAndTechSemLongProject">GitHub</a>
+				<p>Authors:</p>
+				<p>Kiyler Rose</p>
+				<p>Delaney</p>
+				<p>Mia</p>
+				<p></p>
 			</div>
-		</form>
-	</section>
-</body>
+		</footer>
+	</body>
 </html>
