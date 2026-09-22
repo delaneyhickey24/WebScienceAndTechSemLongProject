@@ -2,5 +2,42 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    background-color: #DBC4A5
 }
-
+header{
+    background-color: #7C7960;
+    color: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+}
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.nav-links{
+    display: flex;
+    gap: 20px;
+}
+.nav-links a{
+    color: #72583E;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.nav-links a:hover{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+section{
+    flex: 1;
+    margin-top: 120px;
+    padding: 0px 20px;
+}
