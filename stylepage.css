@@ -1,8 +1,14 @@
+/* CSS StyleSheet for index.html
+Color Palette: #A08670, #72583E, #7C7960, #DBC4A5, #44422D, #443223, #755151, #FFF9F3.  
+*/
+
+
 body {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #DBC4A5
+    background-color: #DBC4A5;
+    padding: 25px;
 }
 header{
     background-color: #7c7960;
@@ -11,16 +17,22 @@ header{
     top: 0px;
     left: 0px;
     width: 100%;
-    padding: 20px;
     display: flex;
     box-sizing: border-box;
     font-size: 18px;
+}
+section{
+    flex: 1;
+    margin-top: 50px;
+    
 }
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 15px;
+    height: 30px;
 }
 .nav-links{
     display: flex;
@@ -36,8 +48,48 @@ header{
     color: #FFFFFF;
     text-decoration: underline;
 }
-section{
-    flex: 1;
-    margin-top: 140px;
-    padding: 0px 20px;
+.container{
+    background-color: #fff9f390;
+    border-width: 1px;
+    border: #443223;
+    border-radius: 5px;
+    border-style: dotted;
+    padding: 10px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin:10px;
+}
+.card{
+    background-color: #fff9f3;
+    border-radius: 10px;
+}
+.project{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.project .thumbnail{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.project .title{
+    height: 20px;
+}
+.project .desc{
+    height: 30px;
+}
+.project .info{
+    background-color: #0b6cff;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: medium;
+    text-align: center;
+    border-radius: 90px;
+    border: none;
+    height: 30px;
+    padding: 5px;
 }
