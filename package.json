@@ -4,7 +4,9 @@
   "description": "\"# WebScienceAndTechSemLongProject\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "server": "node server.js",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,10 @@
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^18.0.1",
-    "express": "^5.2.1",
-    "mongodb": "^7.6.0"
+    "express": "^5.3.0",
+    "mongodb": "^7.7.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
   }
 }
