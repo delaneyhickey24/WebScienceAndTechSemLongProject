@@ -34,6 +34,42 @@
 		</section>
 
 		<main>
+			<section class="login-section" id="login">
+				<div class="container">
+					<div class="login-box">
+						<h2>Welcome Back</h2>
+						<p>Log in to collaborate on projects and join discussions</p>
+						
+						<form action="/login-endpoint" method="POST" class="login-form">
+							<div class="form-group">
+								<label for="user-email">School Email or Username</label>
+								<input 
+									type="email" 
+									id="user-email" 
+									name="username" 
+									autocomplete="username" 
+									required 
+									placeholder="e.g., student@university.edu"
+								>
+							</div>
+							<div class="form-group">
+								<label for="user-password">Password</label>
+								<input 
+									type="password" 
+									id="user-password" 
+									name="password" 
+									autocomplete="current-password" 
+									required 
+									placeholder="Enter your password"
+								>
+							</div>
+							<div class="form-actions">
+								<button type="submit" class="btn-login-submit">Sign In</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
 			<section class="projects section" id="projects">
 				<h2>Active Projects</h2>
 				<p>Here you can view and request to join open projects</p>
