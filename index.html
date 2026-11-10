@@ -1,158 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AccessCS — Projects & Opportunities</title>
+  <link href="/stylepage.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class="brand">
+        <span class="brand-logo"></span>
+        <span>AccessCS</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About Us</a>
+        <a href="#projects">Projects</a>
+        <a href="#opport">Opportunities</a>
+        <a href="#discuss">Discussions</a>
+      </nav>
+    </div>
+  </header>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>CS2400 Project: Ideas & Internships Board</title>
-		<link href="stylepage.css" rel="stylesheet">
-	</head>
+  <section class="hero" id="about">
+    <div class="about">
+      <h2>About AccessCS</h2>
+      <p>
+        A place for college-level computer science students and software
+        engineers to collaborate on projects, discuss CS topics, and find
+        opportunities.
+      </p>
+    </div>
+  </section>
 
-	<body>
-		<header class="header">
-			<div class="nav">
-				<div class="brand">
-					<span class="brand-logo"></span>
-					<span>AccessCS</span>
-				</div>
-				<nav class="nav-links">
-					<a href="#about">About Us</a>
-					<a href="#projects">Projects</a>
-					<a href="#opport">Opportunities</a>
-					<a href="#discuss">Discussions</a>
-				</nav>
-			</div>
-		</header>
+  <main>
+    <section class="login-section" id="login">
+      <div class="container">
+        <div class="login-box">
+          <h2>Welcome to AccessCS</h2>
 
-		<section class="hero" id="about">
-			<div class="about">
-				<!--Rename to project webpage name-->
-				<h2>About THIS PAGE</h2>
-				<p>Our goal is to perform as a one stop shop for college level Computer Scientists and Software Engineers to meet 
-					up and collaborate on projects and discussion boards. Users can also find internships and job opportunities
-					that will allow them to expand in the world of CS.</p>
-			</div>
-		</section>
+          <form id="login-form" class="login-form">
+            <h3>Sign in</h3>
 
-		<main>
-			<section class="login-section" id="login">
-				<div class="container">
-					<div class="login-box">
-						<h2>Welcome To AccessCS</h2>
-						<p>Log in to collaborate on projects, join discussions, or find job opportunities</p>
-						
-						<form action="/login-endpoint" method="POST" class="login-form">
-							<div class="form-group">
-								<label for="user-email">Email or Username</label>
-								<input 
-									type="text" 
-									id="user-email" 
-									name="username" 
-									autocomplete="username" 
-									required 
-									placeholder="Username or Email"
-								>
-							</div>
-							<div class="form-group">
-								<label for="user-password">Password</label>
-								<input 
-									type="password" 
-									id="user-password" 
-									name="password" 
-									autocomplete="current-password" 
-									required 
-									placeholder="Enter your password"
-								>
-							</div>
-							<div class="form-actions">
-								<button type="submit" class="btn-login-submit">Sign In</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</section>
-			<section class="projects section" id="projects">
-				<h2>Active Projects</h2>
-				<p>Here you can view and request to join open projects</p>
-					<form class="submit-form" data-type="project">
-  						<h3>Submit a project</h3>
-  						<label>
-   						 Title
-    					<input name="title" required maxlength="100">
-  						</label>
-  						<label>
-   						 Description
-    					<textarea name="description" required maxlength="1000"></textarea>
-  						</label>
- 						 <label>
-    					Image URL (optional)
-   						 <input name="image" type="url">
-  						</label>
-  						<button type="submit">Submit project</button>
-  						<p class="form-message" aria-live="polite"></p>
-					</form>
-				<div class="container">
-					<div class="grid"></div>
-				</div>
-			</section>
+            <div class="form-group">
+              <label for="login-username">Email or username</label>
+              <input
+                type="text"
+                id="login-username"
+                name="username"
+                autocomplete="username"
+                required
+              >
+            </div>
 
-			<section class="opport section" id="opport">
-				<h2>Opportunities</h2>
-				<p>Here you will be able to find open job opportunities.</p>
-				<form class="submit-form" data-type="opportunity">
-  					<h3>Submit an opportunity</h3>
- 					<label>
-    				Title
-    				<input name="title" required maxlength="100">
-  					</label>
-  					<label>
-    				Description
-    				<textarea name="description" required maxlength="1000"></textarea>
-  					</label>
-  					<button type="submit">Submit opportunity</button>
-  					<p class="form-message" aria-live="polite"></p>
-				</form>
-				<div class="container">
-					<div class="list">
-						<h4>Active</h4>
-						<ul></ul>
-					</div>
-				</div>
-			</section>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                autocomplete="current-password"
+                required
+              >
+            </div>
 
-			<section class="discuss section" id="discuss">
-				<h2>Dicussions</h2>
-				<p>Ask and answer CS topic questions here.</p>
-				<form class="submit-form" data-type="discussion">
-  					<h3>Start a discussion</h3>
-  					<label>
-   					 Title
-    				<input name="title" required maxlength="100">
-  					</label>
-  					<label>
-    				Description
-    				<textarea name="description" required maxlength="1000"></textarea>
-  					</label>
-  					<button type="submit">Submit discussion</button>
-  					<p class="form-message" aria-live="polite"></p>
-				</form>
-				<div class="container">
-					<div class="list">
-						<h4>Active</h4>
-						<ul></ul>
-					</div>
-				</div>
-			</section>
-		
-		</main>
+            <button type="submit">Sign in</button>
+          </form>
 
-		<footer class="footer">
-			<div class="credits">
-				<span>
-					<a href="https://github.com/delaneyhickey24/WebScienceAndTechSemLongProject">GitHub</a>
-				</span>
-				<span>Authors: </span>
-			</div>
-		</footer>
-		<script type="module" src="/src/main.js"></script>
-	</body>
+          <form id="register-form" class="login-form">
+            <h3>Create an account</h3>
+
+            <div class="form-group">
+              <label for="register-username">Username</label>
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                autocomplete="username"
+                required
+                minlength="3"
+                maxlength="40"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="register-email">Email</label>
+              <input
+                type="email"
+                id="register-email"
+                name="email"
+                autocomplete="email"
+                required
+                maxlength="254"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="register-password">Password (at least 12 characters)</label>
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                autocomplete="new-password"
+                required
+                minlength="12"
+              >
+            </div>
+
+            <button type="submit">Create account</button>
+          </form>
+
+          <button type="button" id="logout-button" hidden>Log out</button>
+          <p id="auth-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <h2>Active Projects</h2>
+      <p>Browse open projects. Sign in to submit one.</p>
+
+      <form class="submit-form" data-type="project" hidden>
+        <h3>Submit a project</h3>
+        <label>
+          Title
+          <input name="title" required maxlength="100">
+        </label>
+        <label>
+          Description
+          <textarea name="description" required maxlength="1000"></textarea>
+        </label>
+        <label>
+          Image URL (optional)
+          <input name="image" type="url">
+        </label>
+        <button type="submit">Submit project</button>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+
+      <div class="container">
+        <div class="grid" id="projects-list"></div>
+      </div>
+    </section>
+
+    <section class="opport section" id="opport">
+      <h2>Opportunities</h2>
+      <p>Browse open opportunities. Sign in to submit one.</p>
+
+      <form class="submit-form" data-type="opportunity" hidden>
+        <h3>Submit an opportunity</h3>
+        <label>
+          Title
+          <input name="title" required maxlength="100">
+        </label>
+        <label>
+          Description
+          <textarea name="description" required maxlength="1000"></textarea>
+        </label>
+        <button type="submit">Submit opportunity</button>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+
+      <div class="container">
+        <div class="list">
+          <h4>Active</h4>
+          <ul id="opportunities-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="discuss section" id="discuss">
+      <h2>Discussions</h2>
+      <p>Browse CS discussions. Sign in to start one.</p>
+
+      <form class="submit-form" data-type="discussion" hidden>
+        <h3>Start a discussion</h3>
+        <label>
+          Title
+          <input name="title" required maxlength="100">
+        </label>
+        <label>
+          Description
+          <textarea name="description" required maxlength="1000"></textarea>
+        </label>
+        <button type="submit">Submit discussion</button>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
+
+      <div class="container">
+        <div class="list">
+          <h4>Active</h4>
+          <ul id="discussions-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="credits">
+      <span>
+        <a href="https://github.com/delaneyhickey24/WebScienceAndTechSemLongProject">GitHub</a>
+      </span>
+      <span>Authors: </span>
+    </div>
+  </footer>
+
+  <script>
+    const authMessage = document.querySelector("#auth-message");
+    const loginForm = document.querySelector("#login-form");
+    const registerForm = document.querySelector("#register-form");
+    const logoutButton = document.querySelector("#logout-button");
+
+    function showAuthMessage(message) {
+      authMessage.textContent = message;
+    }
+
+    async function readJsonResponse(response) {
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.error || "Request failed.");
+      }
+      return data;
+    }
+
+    async function updateAuthUI() {
+      const response = await fetch("/api/me", {
+        credentials: "same-origin"
+      });
+      const data = await readJsonResponse(response);
+      const loggedIn = Boolean(data.user);
+
+      loginForm.hidden = loggedIn;
+      registerForm.hidden = loggedIn;
+      logoutButton.hidden = !loggedIn;
+
+      document.querySelectorAll(".submit-form").forEach(form => {
+        form.hidden = !loggedIn;
+      });
+
+      if (loggedIn) {
+        showAuthMessage("Signed in as " + data.user.username + ".");
+      }
+    }
+
+    loginForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      const fields = new FormData(loginForm);
+
+      try {
+        await readJsonResponse(await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({
+            username: fields.get("username"),
+            password: fields.get("password")
+          })
+        }));
+
+        loginForm.reset();
+        await updateAuthUI();
+      } catch (error) {
+        showAuthMessage(error.message);
+      }
+    });
+
+    registerForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      const fields = new FormData(registerForm);
+
+      try {
+        await readJsonResponse(await fetch("/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          body: JSON.stringify({
+            username: fields.get("username"),
+            email: fields.get("email"),
+            password: fields.get("password")
+          })
+        }));
+
+        registerForm.reset();
+        await updateAuthUI();
+      } catch (error) {
+        showAuthMessage(error.message);
+      }
+    });
+
+    logoutButton.addEventListener("click", async () => {
+      try {
+        const response = await fetch("/api/logout", {
+          method: "POST",
+          credentials: "same-origin"
+        });
+        await readJsonResponse(response);
+        await updateAuthUI();
+        showAuthMessage("You are logged out.");
+      } catch (error) {
+        showAuthMessage(error.message);
+      }
+    });
+
+    document.querySelectorAll(".submit-form").forEach(form => {
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        const fields = new FormData(form);
+        const message = form.querySelector(".form-message");
+
+        try {
+          await readJsonResponse(await fetch("/api/data", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "same-origin",
+            body: JSON.stringify({
+              type: form.dataset.type,
+              title: fields.get("title"),
+              description: fields.get("description"),
+              image: fields.get("image") || ""
+            })
+          }));
+
+          form.reset();
+          message.textContent = "Submitted.";
+          await loadPosts();
+        } catch (error) {
+          message.textContent = error.message;
+        }
+      });
+    });
+
+    function addTextElement(parent, tag, text) {
+      const element = document.createElement(tag);
+      element.textContent = text;
+      parent.appendChild(element);
+      return element;
+    }
+
+    async function loadPosts() {
+      for (const type of ["project", "opportunity", "discussion"]) {
+        const response = await fetch(
+          "/api/data?type=" + encodeURIComponent(type),
+          { credentials: "same-origin" }
+        );
+        const posts = await readJsonResponse(response);
+
+        const containerId = {
+          project: "projects-list",
+          opportunity: "opportunities-list",
+          discussion: "discussions-list"
+        }[type];
+
+        const container = document.getElementById(containerId);
+        container.replaceChildren();
+
+        for (const post of posts) {
+          const item = type === "project"
+            ? document.createElement("article")
+            : document.createElement("li");
+
+          addTextElement(item, "h3", post.title);
+          addTextElement(item, "p", post.description);
+
+          if (type === "project" && post.image) {
+            const image = document.createElement("img");
+            image.src = post.image;
+            image.alt = "";
+            image.loading = "lazy";
+            item.appendChild(image);
+          }
+
+          container.appendChild(item);
+        }
+      }
+    }
+
+    async function startPage() {
+      try {
+        await updateAuthUI();
+        await loadPosts();
+      } catch (error) {
+        showAuthMessage(error.message);
+      }
+    }
+
+    startPage();
+  </script>
+</body>
 </html>
+
