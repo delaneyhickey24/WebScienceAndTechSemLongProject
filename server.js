@@ -74,11 +74,12 @@ async function startServer() {
           typeof password !== 'string' ||
           username.trim().length < 3 ||
           username.trim().length > 40 ||
-          password.length < 10 ||
-          email.trim().length > 254
+          password.length < 12 ||
+          email.trim().length > 254 ||
+          !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())
         ) {
           return res.status(400).json({
-            error: 'Enter a username, valid email, and password of at least 10 characters.'
+            error: 'Enter a username, valid email, and password of at least 12 characters.'
           });
         }
 
@@ -188,6 +189,46 @@ async function startServer() {
       }
     });
 
+
+    // No-JavaScript fallback: read-only page rendered on the server.
+    app.get('/api/browse', async (req, res) => {
+      try {
+        const sections = [
+          ['project', 'Projects'],
+          ['opportunity', 'Opportunities'],
+          ['discussion', 'Discussions'],
+        ];
+
+        let body = '';
+        for (const [type, heading] of sections) {
+          const items = await posts.find({ type }).sort({ createdAt: -1 }).limit(50).toArray();
+          body += `<h2>${heading}</h2>`;
+          body += items.length
+            ? '<ul>' + items.map(i =>
+                `<li><b>${escapeHtml(i.title)}</b> ${escapeHtml(i.description)}</li>`
+              ).join('') + '</ul>'
+            : '<p>Nothing here yet.</p>';
+        }
+
+        res.type('html').send(`<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AccessCS | Browse</title>
+<style>
+  body{font-family:Georgia,serif;line-height:1.5;background:#DBC4A5;color:#443223;max-width:46rem;margin:0 auto;padding:1rem}
+  h1,h2{color:#44422D} li{margin:.5rem 0;overflow-wrap:anywhere} a{color:#44422D}
+</style></head><body>
+<h1>AccessCS</h1>
+<p>This is the plain version of the site. Posting and signing in need JavaScript.</p>
+${body}
+</body></html>`);
+      } catch (error) {
+        console.error('Browse error:', error);
+        res.status(500).send('Could not load posts.');
+      }
+    });
+
     //Private: only logged in users may submit.
     app.post("/api/data", requireLogin, async (req, res) => {
       try {
@@ -250,6 +291,12 @@ async function startServer() {
 
 function escapeRegex(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, c => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
 }
 
 startServer();
